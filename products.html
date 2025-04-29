@@ -33,6 +33,20 @@
       color: #CCCCCC;
       font-size: 1.1rem;
     }
+    nav {
+      position: absolute;
+      top: 2rem;
+      right: 2rem;
+    }
+    nav a {
+      margin-left: 1rem;
+      color: #CCCCCC;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    nav a:hover {
+      color: #00F54;
+    }
     .filter-bar {
       display: flex;
       flex-wrap: wrap;
@@ -78,6 +92,17 @@
       font-size: 1rem;
       margin-top: 0.5rem;
     }
+    .product-card a {
+      display: inline-block;
+      margin-top: 1rem;
+      color: #0A84FF;
+      text-decoration: underline;
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+    .product-card a:hover {
+      color: #00F54;
+    }
     .hashtags {
       margin-top: 1rem;
       font-size: 0.85rem;
@@ -86,6 +111,12 @@
   </style>
 </head>
 <body>
+  <nav>
+    <a href="index.html">Главная</a>
+    <a href="about.html">О нас</a>
+    <a href="contact.html">Контакты</a>
+  </nav>
+
   <header>
     <h1>Наши продукты</h1>
     <p>Выберите игру, которая подходит под задачи вашей команды — от стратегий до магических квестов.</p>
@@ -103,16 +134,19 @@
     <div class="product-card">
       <h3>Тайный агент</h3>
       <p>Игра на развитие стратегического мышления и командной сплочённости в условиях неопределённости.</p>
+      <a href="product-agent.html">Подробнее</a>
       <div class="hashtags">#softskills #команднаяработа #руководители</div>
     </div>
     <div class="product-card">
       <h3>Подземелье и Драконы</h3>
       <p>Фэнтези-квест на развитие гибкости мышления, креативности и лидерства в игровых ситуациях.</p>
+      <a href="product-dragons.html">Подробнее</a>
       <div class="hashtags">#лидерство #гибкость #softskills</div>
     </div>
     <div class="product-card">
       <h3>Гарри Поттер</h3>
       <p>Магическая симуляция, вовлекающая участников в прокачку коммуникации и сотрудничества.</p>
+      <a href="product-potter.html">Подробнее</a>
       <div class="hashtags">#softskills #коммуникация #вовлеченность</div>
     </div>
   </section>
