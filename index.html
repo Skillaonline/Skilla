@@ -1,11 +1,18 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>СКИЛЛА — Цифровые бизнес-игры и микрообучение</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>СКИЛЛА — Главная</title>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --primary: #00F54;
+      --accent: #0A84FF;
+      --dark: #0A0A1F;
+      --bg-glow: radial-gradient(circle at 20% 30%, #0A84FF33, transparent 60%),
+                 radial-gradient(circle at 80% 70%, #FF46DD33, transparent 60%);
+    }
     * {
       margin: 0;
       padding: 0;
@@ -13,8 +20,9 @@
     }
     body {
       font-family: 'Manrope', sans-serif;
-      background: #0B0E1D;
-      color: #FFFFFF;
+      background-color: var(--dark);
+      color: white;
+      overflow-x: hidden;
     }
     nav {
       position: fixed;
@@ -23,11 +31,12 @@
       width: 220px;
       height: 100vh;
       background-color: #0C0F1F;
-      padding: 2rem 1rem;
+      padding: 2rem 1.2rem;
       display: flex;
       flex-direction: column;
       gap: 1.5rem;
-      border-right: 1px solid #1a1a2e;
+      z-index: 10;
+      border-right: 1px solid rgba(255, 255, 255, 0.05);
     }
     nav::before {
       content: "";
@@ -38,78 +47,82 @@
       margin-bottom: 2rem;
     }
     nav a {
-      color: #CCC;
+      color: #ccc;
       text-decoration: none;
       font-size: 1rem;
       font-weight: 500;
-      transition: 0.3s;
+      transition: color 0.3s;
     }
-    nav a:hover, nav a.active {
-      color: #00F54;
+    nav a:hover {
+      color: var(--primary);
     }
     main {
       margin-left: 220px;
+      position: relative;
     }
     .hero {
-      position: relative;
       height: 100vh;
       display: flex;
       flex-direction: column;
-      align-items: center;
       justify-content: center;
+      align-items: center;
       text-align: center;
-      padding: 3rem 2rem;
+      padding: 3rem;
+      background: var(--bg-glow), linear-gradient(to right, #0F1225, #171B36);
+      position: relative;
       overflow: hidden;
     }
     .hero::before {
       content: "";
       position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: radial-gradient(circle at 20% 30%, #0A84FF22, transparent 60%),
-                  radial-gradient(circle at 80% 70%, #FF46DD22, transparent 60%);
-      animation: pulse 15s ease-in-out infinite;
+      width: 200%;
+      height: 200%;
+      top: -50%;
+      left: -50%;
+      background: radial-gradient(#0A84FF22 1px, transparent 1px);
+      background-size: 40px 40px;
+      opacity: 0.15;
+      animation: moveBackground 40s linear infinite;
       z-index: 0;
     }
+    @keyframes moveBackground {
+      0% { transform: translate(0, 0); }
+      100% { transform: translate(100px, 100px); }
+    }
     .hero h1 {
-      font-size: 3.8rem;
+      font-size: 4rem;
       font-weight: 800;
-      color: #00F54;
-      text-shadow: 0 0 15px #00F54;
+      color: var(--primary);
+      text-shadow: 0 0 20px var(--primary);
       position: relative;
       z-index: 1;
     }
     .hero p {
-      font-size: 1.2rem;
-      color: #DDDDDD;
+      font-size: 1.3rem;
+      color: #CCCCCC;
       max-width: 700px;
-      margin-top: 1rem;
+      margin: 1.5rem auto;
       position: relative;
       z-index: 1;
     }
     .cta-button {
-      margin-top: 2.5rem;
-      padding: 1rem 2.2rem;
+      margin-top: 2rem;
+      padding: 1rem 2rem;
       font-size: 1rem;
       font-weight: 600;
-      border: none;
-      border-radius: 14px;
-      background: linear-gradient(90deg, #00F54, #0A84FF);
       color: #0A0A1F;
-      cursor: pointer;
+      background: linear-gradient(90deg, var(--primary), var(--accent));
+      border: none;
+      border-radius: 12px;
+      text-decoration: none;
       transition: all 0.3s ease;
+      box-shadow: 0 0 20px var(--primary);
       position: relative;
       z-index: 1;
-      text-decoration: none;
-      box-shadow: 0 0 12px rgba(0, 245, 84, 0.4);
     }
     .cta-button:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 0 20px #00F54;
-    }
-    @keyframes pulse {
-      0%, 100% { transform: scale(1); opacity: 1; }
-      50% { transform: scale(1.03); opacity: 0.8; }
+      transform: scale(1.05);
+      box-shadow: 0 0 30px var(--primary);
     }
   </style>
 </head>
