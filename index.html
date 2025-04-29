@@ -11,46 +11,51 @@
       font-family: 'Manrope', sans-serif;
       background-color: #0A0A1F;
       color: #FFFFFF;
+      display: flex;
+    }
+    nav {
+      width: 220px;
+      background-color: #0A0A1F;
+      padding: 2rem 1rem;
+      border-right: 1px solid #1a1a2e;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      position: fixed;
+      height: 100vh;
+    }
+    nav a {
+      color: #FFFFFF;
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #00F54;
+    }
+    main {
+      margin-left: 220px;
+      width: calc(100% - 220px);
     }
     header {
-      padding: 3rem 2rem 2rem;
+      padding: 5rem 2rem;
       text-align: center;
-      background: radial-gradient(circle at center, #0A0A1F 0%, #070716 100%);
-    }
-    header img {
-      width: 120px;
-      margin-bottom: 1rem;
+      background: url("logo.png") center/150px no-repeat, radial-gradient(circle at center, #0A0A1F 0%, #070716 100%);
     }
     header h1 {
       font-size: 3rem;
       color: #00F54;
       margin: 0.5rem 0;
-      letter-spacing: 0.5px;
     }
     header p {
-      color: #FFFFFF;
-      margin-top: 0.2rem;
       font-size: 1.25rem;
-      font-weight: 400;
-    }
-    .cta {
-      background: linear-gradient(90deg, #00F54, #0A84FF);
-      border: none;
-      padding: 1rem 2.5rem;
-      font-size: 1rem;
-      border-radius: 12px;
-      cursor: pointer;
-      color: #0A0A1F;
-      margin-top: 2rem;
-      font-weight: 600;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-    .cta:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 10px #00F54;
+      color: #FFFFFF;
+      max-width: 600px;
+      margin: 0.5rem auto 0;
     }
     .section {
-      padding: 4rem 2rem 2rem;
+      padding: 4rem 2rem;
       max-width: 1200px;
       margin: 0 auto;
     }
@@ -103,38 +108,54 @@
   </style>
 </head>
 <body>
-  <header>
-    <img src="logo.png" alt="Логотип СКИЛЛА" />
-    <h1>СКИЛЛА</h1>
-    <p>Цифровые бизнес-игры и микрообучение</p>
-    <button class="cta">Заказать консультацию</button>
-  </header>
+  <nav>
+    <a href="#products">Продукты</a>
+    <a href="#about">О нас</a>
+    <a href="#contacts">Контакты</a>
+  </nav>
 
-  <section class="section">
-    <h2>Наши продукты</h2>
-    <div class="filter-bar">
-      <button>#руководители</button>
-      <button>#softskills</button>
-      <button>#адаптация</button>
-      <button>#команднаяработа</button>
-    </div>
-    <div class="products-grid">
-      <div class="product-card">
-        <h3>Тайный агент</h3>
-        <p>Игра на развитие стратегического мышления и командного взаимодействия в условиях неопределённости.</p>
-        <div class="hashtags">#руководители #команднаяработа #softskills</div>
+  <main>
+    <header>
+      <h1>СКИЛЛА</h1>
+      <p>Цифровые бизнес-игры и микрообучение, которые формируют навыки в процессе и дают результат уже сегодня.</p>
+    </header>
+
+    <section class="section" id="products">
+      <h2>Наши продукты</h2>
+      <div class="filter-bar">
+        <button>#руководители</button>
+        <button>#softskills</button>
+        <button>#адаптация</button>
+        <button>#команднаяработа</button>
       </div>
-      <div class="product-card">
-        <h3>Подземелье и Драконы</h3>
-        <p>Фэнтези-квест на развитие лидерства, гибкости и управления ресурсами.</p>
-        <div class="hashtags">#лидерство #гибкость #игрофикация</div>
+      <div class="products-grid">
+        <div class="product-card">
+          <h3>Тайный агент</h3>
+          <p>Игра на развитие стратегического мышления и командного взаимодействия в условиях неопределённости.</p>
+          <div class="hashtags">#руководители #команднаяработа #softskills</div>
+        </div>
+        <div class="product-card">
+          <h3>Подземелье и Драконы</h3>
+          <p>Фэнтези-квест на развитие лидерства, гибкости и управления ресурсами.</p>
+          <div class="hashtags">#лидерство #гибкость #игрофикация</div>
+        </div>
+        <div class="product-card">
+          <h3>Гарри Поттер</h3>
+          <p>Магическая игра, вовлекающая сотрудников в обучение навыкам коммуникации и сотрудничества.</p>
+          <div class="hashtags">#вовлеченность #коммуникации #softskills</div>
+        </div>
       </div>
-      <div class="product-card">
-        <h3>Гарри Поттер</h3>
-        <p>Магическая игра, вовлекающая сотрудников в обучение навыкам коммуникации и сотрудничества.</p>
-        <div class="hashtags">#вовлеченность #коммуникации #softskills</div>
-      </div>
-    </div>
-  </section>
+    </section>
+
+    <section class="section" id="about">
+      <h2>О нас</h2>
+      <p>Мы — команда профессиональных бизнес-тренеров и методистов. Создаём геймифицированные обучающие продукты для развития сотрудников: от вовлекающих игр до цифровых симуляторов, работающих в моменте.</p>
+    </section>
+
+    <section class="section" id="contacts">
+      <h2>Контакты</h2>
+      <p>Почта: hello@skilla.online<br>Телефон: +7 999 000 0000</p>
+    </section>
+  </main>
 </body>
 </html>
