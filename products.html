@@ -1,11 +1,16 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Продукты — СКИЛЛА</title>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --primary: #00F54;
+      --accent: #0A84FF;
+      --dark: #0A0A1F;
+    }
     * {
       margin: 0;
       padding: 0;
@@ -13,142 +18,94 @@
     }
     body {
       font-family: 'Manrope', sans-serif;
-      background: radial-gradient(circle at 10% 20%, #0A84FF22, transparent 60%),
-                  radial-gradient(circle at 80% 90%, #FF46DD22, transparent 60%),
-                  #0A0A1F;
-      color: #FFFFFF;
-      min-height: 100vh;
-      padding: 2rem;
-    }
-    header {
-      text-align: center;
-      margin-bottom: 3rem;
-    }
-    header h1 {
-      font-size: 2.5rem;
-      color: #00F54;
-      margin-bottom: 0.5rem;
-    }
-    header p {
-      color: #CCCCCC;
-      font-size: 1.1rem;
+      background-color: #0B0E1D;
+      color: white;
     }
     nav {
-      position: absolute;
-      top: 2rem;
-      right: 2rem;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 220px;
+      height: 100vh;
+      background-color: #0C0F1F;
+      padding: 2rem 1.2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      z-index: 10;
+      border-right: 1px solid rgba(255, 255, 255, 0.05);
     }
     nav a {
-      margin-left: 1rem;
-      color: #CCCCCC;
+      color: #ccc;
       text-decoration: none;
+      font-size: 1rem;
       font-weight: 500;
+      transition: color 0.3s;
     }
     nav a:hover {
-      color: #00F54;
+      color: var(--primary);
     }
-    .filter-bar {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 0.75rem;
-      margin-bottom: 2rem;
+    nav a.active {
+      color: var(--primary);
+      font-weight: 600;
     }
-    .filter-bar button {
-      background-color: #0A84FF;
-      border: none;
-      padding: 0.5rem 1.2rem;
-      color: white;
-      border-radius: 8px;
-      cursor: pointer;
-      font-size: 0.9rem;
+    main {
+      margin-left: 220px;
+      padding: 2rem;
     }
-    .products-grid {
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: var(--primary);
+    }
+    .product-list {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
-      max-width: 1200px;
-      margin: 0 auto;
+      gap: 1.5rem;
     }
     .product-card {
-      background-color: rgba(255, 255, 255, 0.03);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      border-radius: 14px;
+      background: #12172C;
       padding: 1.5rem;
-      transition: all 0.3s ease;
-      backdrop-filter: blur(4px);
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0, 245, 84, 0.1);
+      transition: 0.3s;
     }
     .product-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 0 15px #00F54;
+      box-shadow: 0 0 20px rgba(0, 245, 84, 0.3);
     }
     .product-card h3 {
-      margin-top: 0;
-      color: #00F54;
-      font-size: 1.4rem;
+      margin-bottom: 0.5rem;
+      color: #fff;
     }
     .product-card p {
-      color: #DDDDDD;
-      font-size: 1rem;
-      margin-top: 0.5rem;
-    }
-    .product-card a {
-      display: inline-block;
-      margin-top: 1rem;
-      color: #0A84FF;
-      text-decoration: underline;
-      font-weight: 600;
-      font-size: 0.95rem;
-    }
-    .product-card a:hover {
-      color: #00F54;
-    }
-    .hashtags {
-      margin-top: 1rem;
-      font-size: 0.85rem;
-      color: #7B2CBF;
+      color: #ccc;
     }
   </style>
 </head>
 <body>
   <nav>
     <a href="index.html">Главная</a>
+    <a href="products.html" class="active">Продукты</a>
     <a href="about.html">О нас</a>
     <a href="contact.html">Контакты</a>
   </nav>
 
-  <header>
+  <main>
     <h1>Наши продукты</h1>
-    <p>Выберите игру, которая подходит под задачи вашей команды — от стратегий до магических квестов.</p>
-  </header>
-
-  <div class="filter-bar">
-    <button>#softskills</button>
-    <button>#лидерство</button>
-    <button>#команднаяработа</button>
-    <button>#адаптация</button>
-    <button>#гибкость</button>
-  </div>
-
-  <section class="products-grid">
-    <div class="product-card">
-      <h3>Тайный агент</h3>
-      <p>Игра на развитие стратегического мышления и командной сплочённости в условиях неопределённости.</p>
-      <a href="product-agent.html">Подробнее</a>
-      <div class="hashtags">#softskills #команднаяработа #руководители</div>
+    <div class="product-list">
+      <div class="product-card">
+        <h3>Тайный агент</h3>
+        <p>Игра на развитие стратегического мышления и командной работы.</p>
+      </div>
+      <div class="product-card">
+        <h3>Подземелье и Драконы</h3>
+        <p>Фэнтези-квест для развития лидерства и гибкости.</p>
+      </div>
+      <div class="product-card">
+        <h3>Гарри Поттер</h3>
+        <p>Магическая игра про вовлечение и коммуникации.</p>
+      </div>
     </div>
-    <div class="product-card">
-      <h3>Подземелье и Драконы</h3>
-      <p>Фэнтези-квест на развитие гибкости мышления, креативности и лидерства в игровых ситуациях.</p>
-      <a href="product-dragons.html">Подробнее</a>
-      <div class="hashtags">#лидерство #гибкость #softskills</div>
-    </div>
-    <div class="product-card">
-      <h3>Гарри Поттер</h3>
-      <p>Магическая симуляция, вовлекающая участников в прокачку коммуникации и сотрудничества.</p>
-      <a href="product-potter.html">Подробнее</a>
-      <div class="hashtags">#softskills #коммуникация #вовлеченность</div>
-    </div>
-  </section>
+  </main>
 </body>
 </html>
